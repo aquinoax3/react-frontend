@@ -18,6 +18,7 @@ function Card({album}) {
                     <div className='right'>
                         <h1>{album.name}</h1>
                         <h1>{album.artist}</h1>
+                        <button id="album_add_button">Add to your list</button>
                     </div>
                 </div>
             </div>
