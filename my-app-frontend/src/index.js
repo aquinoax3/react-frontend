@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
 import './index.css';
-import FullPage from './components/Fullpage';
+import App from './components/App';
 
 ReactDOM.render(
   <BrowserRouter>
   <React.StrictMode>
-    <FullPage/>
+    <App/>
   </React.StrictMode>
   </BrowserRouter>,
   document.getElementById('root')
