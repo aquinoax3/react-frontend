@@ -30,18 +30,11 @@ code {
   background-color: #c7c4b9;
 }
 
-h2{
-  color: #4717F6;
-  
-}
 
 /* NAV ELEMENTS */
 .nav{
   background-color: #0E0B16;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   display: flex;
 }
 
@@ -56,8 +49,7 @@ h2{
   padding: .1em .5em .1em .5em;
 }
 
-.nav_element:hover,
-.nav_element:active {
+.nav_element:hover{
   color: tomato;
   border-bottom: 2px solid tomato;
 }
@@ -73,6 +65,7 @@ h2{
   text-decoration: none;
   font-size: 1em;
   padding-right: 15%;
+  color: #E7DFDD;
 }
 
 /* SEARCHBAR */
@@ -81,20 +74,48 @@ h2{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 200px
+  height: 7.5em;
 }
 
 .search_content{
   margin: 1rem 2rem;
 }
 
-.xd{
+.row {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  text-align: center;
-  height: 60vh;
-  min-height: 100px;
-  background-color: #c7c4b9;
+}
+
+.wrapper {
+  width: 400px;
+  height: 5%;
+  background: white;
+  margin: auto;
+  overflow-y: hidden;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0;
+  transform: scale(0.95);
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+.wrapper .container .bottom .left {
+  width: 50%;
+  background: #f4f4f4;
+  position: relative;
+  float: left;
+}
+
+.wrapper .container .bottom .right {
+  width: 50%;
+  background: #A6CDDE;
+  color: white;
+  float: right;
+} 
+ 
+.wrapper .container .bottom .right .details {
+  padding: 0;
+  font-size: .9em
+}
+ .wrapper:hover {
+  transform: scale(1);
+  box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
 }

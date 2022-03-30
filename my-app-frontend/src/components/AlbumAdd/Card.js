@@ -1,7 +1,8 @@
 import React from 'react';
 
+//Add a prop and post method on App.Js
+
 function Card({album}) {
-    const img = album.image[3]
     return(
         <div className="wrapper">
             <div className="container">
@@ -9,7 +10,7 @@ function Card({album}) {
                 <div className="bottom">
                     <div className="left">
                         <div className="details">
-                            <img src={img['#text']} alt={album.name} />
+                            <img src={album.image[2]['#text']} alt={album.name} />
                         </div>
                         <div>                    
                         </div>
