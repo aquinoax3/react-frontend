@@ -5,11 +5,15 @@ function Combiner({onChange,search}){
     const [savedAlbums, setSavedAlbums] = useState([])
 
     useEffect(() => {
+        if (search === "") { 
+    
+            return undefined }
         fetch(`https://ws.audioscrobbler.com/2.0/?method=album.search&album=${search}&api_key=639324828b6390c9a197ca916d0b68e2&format=json`)
         .then(res => res.json())
         .then(data =>{
             if (data.errorMessage) {
             setSavedAlbums([])
+            return (null)
             }
             else {
                 setSavedAlbums(data)

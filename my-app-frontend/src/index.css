@@ -35,7 +35,7 @@ code {
 .nav{
   background-color: #0E0B16;
   position: relative;
-  display: flex;
+  display: block;
 }
 
 .nav_element {
@@ -83,38 +83,40 @@ code {
 
 .row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  float: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper {
-  width: 400px;
-  height: 5%;
-  background: white;
-  margin: auto;
+  width: 350px;
+  height: 175px;
+  margin-left: 20px;
+  flex-direction: row;
+  margin: 10px;
   overflow-y: hidden;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0;
-  transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.5s;
 }
 .wrapper .container .bottom .left {
   width: 50%;
   background: #f4f4f4;
-  position: relative;
   float: left;
+  height: 175px;
 }
 
 .wrapper .container .bottom .right {
   width: 50%;
-  background: #A6CDDE;
-  color: white;
+  height: 175px;
+  background: #4717F6;
+  color: #E7DFDD;
   float: right;
+  font-size: .75em;
 } 
  
-.wrapper .container .bottom .right .details {
-  padding: 0;
-  font-size: .9em
-}
  .wrapper:hover {
   transform: scale(1);
   box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);
