@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Card({album, addAlbum}) {
+function FavCard({album}) {
     return(
         <div className="wrapper">
             <div className="container">
@@ -9,15 +9,14 @@ function Card({album, addAlbum}) {
                 <div className="bottom">
                     <div className="left">
                         <div className="details">
-                            <img src={album.image[2]['#text']} alt={album.name} />
+                            <img src={album.album_cover} alt={album.album_title} />
                         </div>
                         <div>                    
                         </div>
                     </div>
                     <div className='right'>
-                        <h3>{album.name}</h3>
-                        <h3>{album.artist}</h3>
-                        <button id="album_add_button" onClick={() => addAlbum(album)}>Add to your list</button>
+                        <h3>{album.album_title}</h3>
+                        <h3>{album.album_artist}</h3>
                     </div>
                 </div>
             </div>
@@ -25,4 +24,4 @@ function Card({album, addAlbum}) {
     )
 }
 
-export default Card;
+export default FavCard;

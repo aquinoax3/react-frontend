@@ -1,7 +1,7 @@
 import React , {useState, useEffect} from 'react';
 import SearchFunction from './SearchFunction';
 
-function Combiner({onChange,search}){
+function Combiner({onChange,search, addAlbum}){
     const [savedAlbums, setSavedAlbums] = useState([])
 
     useEffect(() => {
@@ -31,7 +31,7 @@ function Combiner({onChange,search}){
         <p className="search_content">Search for an album to get started!</p>
         <input className="search_content" type="text" name="search" placeholder="Search..." onChange={(e) => onChange(e.target.value)}></input>
     </div>
-        <SearchFunction search = {search} albums = {savedAlbums} />
+        <SearchFunction search = {search} albums = {savedAlbums} addAlbum = {addAlbum}/>
     </div>
     )
 }
