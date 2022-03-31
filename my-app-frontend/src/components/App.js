@@ -16,7 +16,6 @@ function App() {
 
     function onSearchChange(input){
         setSearch(input)
-        console.log(search)
     }
 
     function handleAddAlbum(album){
