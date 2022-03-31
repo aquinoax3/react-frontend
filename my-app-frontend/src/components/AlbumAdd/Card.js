@@ -1,8 +1,7 @@
 import React from 'react';
 
-//Add a prop and post method on App.Js
 
-function Card({album}) {
+function Card({album, addAlbum}) {
     return(
         <div className="wrapper">
             <div className="container">
@@ -16,8 +15,9 @@ function Card({album}) {
                         </div>
                     </div>
                     <div className='right'>
-                        <h1>{album.name}</h1>
-                        <h1>{album.artist}</h1>
+                        <h3>{album.name}</h3>
+                        <h3>{album.artist}</h3>
+                        <button id="album_add_button" onClick={() => addAlbum(album)}>Add to your list</button>
                     </div>
                 </div>
             </div>

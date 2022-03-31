@@ -16,19 +16,19 @@ function App() {
 
     function onSearchChange(input){
         setSearch(input)
-        console.log(search)
     }
 
     function handleAddAlbum(album){
         const foundIndex = likedList.findIndex(item => album.name === item.name);
         if (foundIndex === -1) {
             setLikedList([...likedList, album]);
+            let albumInfo = {album_title: album.name,album_cover:album.image[2]['#text'],album_artist:album.artist}
             fetch("http://localhost:9292/albums", {
             method: "POST",
             headers: {
             "Content-Type": "application/json",
             },
-            body: JSON.stringify(album),
+            body: JSON.stringify(albumInfo),
             })
             .then(response => response.json())
             .catch(error => console.error("Error:", error))
@@ -38,14 +38,14 @@ function App() {
     }
 
     function getUserAlbums (album){
-        if(likedList.find(item => item === album)) {
-            const newList = likedList.filter(item => item !== album)
-            setLikedList(newList)
-            fetch("http://localhost:3000/"+album.id, {
-            method: "DELETE" })
-        } else {
-            console.log("Not found")
-        }
+        fetch("http://localhost:9292/toplists")
+        .then(res => res.json())
+        .then((data)=> console.log(data))
+
+        // filter data 
+        // where data.user_id = current user id 
+        // pass returned album ids into a fetch for album
+        //then use Card.js to showcase user albums 
     }
 
 
@@ -58,7 +58,7 @@ function App() {
                     <Home/>
                 </Route>
                 <Route exact path ="/AlbumPicker">
-                    <Combiner search = {search} onChange ={onSearchChange}/>
+                    <Combiner search = {search} onChange ={onSearchChange} addAlbum = {handleAddAlbum}/>
                 </Route>
                 <Route path="/YourFavs">
                     <YourFavs/>
