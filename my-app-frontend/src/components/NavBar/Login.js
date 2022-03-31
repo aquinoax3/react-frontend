@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 function Login() {
   const [values, setValues] = useState({ username: "", password: "" });
 
@@ -57,7 +56,7 @@ function Login() {
       </form>
     </div>
   );
-
+}
 export default Login;
 
 // // create new user
