@@ -24,7 +24,7 @@ code {
 .nav{
   background-color: #0E0B16;
   position: relative;
-  display: flex;
+  display: block;
 }
 
 .nav_element {
@@ -93,8 +93,8 @@ code {
 .wrapper .container .bottom .left {
   width: 50%;
   background: #f4f4f4;
-  position: relative;
   float: left;
+  height: 175px;
 }
 
 .wrapper .container .bottom .right {
@@ -106,10 +106,6 @@ code {
   font-size: .5em;
 } 
  
-.wrapper .container .bottom .right .details {
-  padding: 0;
-  font-size: .9em
-}
  .wrapper:hover {
   transform: scale(1);
   box-shadow: 5px 20px 30px rgba(0, 0, 0, 0.2);

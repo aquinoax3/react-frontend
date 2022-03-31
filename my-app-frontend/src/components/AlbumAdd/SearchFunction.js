@@ -24,4 +24,4 @@ function SearchFunction({albums, addAlbum}) {
     </div>  
     )
 }
-export default SearchFunction
+export default SearchFunction   

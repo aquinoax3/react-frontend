@@ -58,7 +58,7 @@ function App() {
                     <Home/>
                 </Route>
                 <Route exact path ="/AlbumPicker">
-                    <Combiner search = {search} onChange ={onSearchChange} addAlbum = {handleAddAlbum}/>
+                    <Combiner search = {search} onChange ={onSearchChange} addAlbum = {handleAddAlbum} />
                 </Route>
                 <Route path="/YourFavs">
                     <YourFavs/>
