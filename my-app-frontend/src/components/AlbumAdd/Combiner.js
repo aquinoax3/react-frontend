@@ -17,7 +17,6 @@ function Combiner({onChange,search, addAlbum}){
             }
             else {
                 setSavedAlbums(data)
-                console.log(data)
             }
 
         })

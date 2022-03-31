@@ -3,17 +3,23 @@ import React, {useEffect, useState} from 'react';
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import Nav from './NavBar/Nav';
 import Home from './Home';
-import YourFavs from './YourFavs';
+import YourFavs from './AlbumLoad/YourFavs';
 import Combiner from './AlbumAdd/Combiner';
-import Discover from './Discover';
+import Discover from './AlbumLoad/Discover';
 import Login from './NavBar/Login';
 
 
 function App() {
+
     const [page, setPage] = useState("/")
     const [likedList, setLikedList] = useState([])
     const [search, setSearch] = useState(" ")
-
+    useEffect(() => {
+      if(JSON.parse(localStorage.getItem('user')) === null){
+        localStorage.setItem('user', JSON.stringify({}));
+      }
+    }, [])
+    
     function onSearchChange(input){
         setSearch(input)
     }
@@ -35,17 +41,6 @@ function App() {
         } else {
             console.log("Album already on list")
         }
-    }
-
-    function getUserAlbums (album){
-        fetch("http://localhost:9292/toplists")
-        .then(res => res.json())
-        .then((data)=> console.log(data))
-
-        // filter data 
-        // where data.user_id = current user id 
-        // pass returned album ids into a fetch for album
-        //then use Card.js to showcase user albums 
     }
 
 
