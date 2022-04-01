@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import FavCard from "./FavCard";
+import DiscCard from "./DiscCard";
+import Card from "../AlbumAdd/Card";
 
 function Discover() {
-  let [userAlbums, setUserAlbums] = useState([]);
+  const [userAlbums, setUserAlbums] = useState([]);
 
   function handleSearchInput() {
     console.log("searched");
@@ -14,7 +15,7 @@ function Discover() {
   console.log(userAlbums);
 
   let showenItems = userAlbums.map((album) => {
-    return <FavCard key={album.id} album={album} />;
+    return <DiscCard key={album.id} album={album} />;
   });
   return (
     <div id="content_container">
