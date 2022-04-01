@@ -3,7 +3,7 @@ import React from 'react';
 
 function DiscCard({album}) {
     return(
-        <div className="wrapper">
+        <div className="wrapper" id="disc">
             <div className="container">
                 <div className="top"></div>
                 <div className="bottom">

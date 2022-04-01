@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import DiscCard from "./DiscCard";
-import Card from "../AlbumAdd/Card";
 
 function Discover() {
   const [userAlbums, setUserAlbums] = useState([]);
@@ -34,7 +33,9 @@ function Discover() {
           ></input>
         </form>
       </div>
-      {showenItems}
+      <div id="disc_container">
+        {showenItems}
+      </div>
     </>
   );
 }
