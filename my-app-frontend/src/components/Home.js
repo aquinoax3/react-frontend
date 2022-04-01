@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function Home() {
-    return (
+  return (
     <div>
         <header className="title"> 
             <h1> Album Picker </h1>
@@ -17,8 +17,7 @@ function Home() {
 '></img>
         </div> 
     </div>
-    )
+  );
 }
-
 
 export default Home;

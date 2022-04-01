@@ -1,12 +1,36 @@
-import React from 'react';
+import React from "react";
+import { useState } from "react";
+import FavCard from "./FavCard";
 
-function Discover(){
-    return(
+function Discover() {
+  let [userAlbums, setUserAlbums] = useState([]);
+
+  function handleSearchInput() {
+    console.log("searched");
+    fetch(`http://localhost:9292/toplists`)
+      .then((response) => response.json())
+      .then((jsonData) => setUserAlbums(jsonData));
+  }
+  console.log(userAlbums);
+
+  let showenItems = userAlbums.map((album) => {
+    return <FavCard key={album.id} album={album} />;
+  });
+  return (
     <div id="content_container">
-        <p className="search_content">Search your friend's username to see their album choices.</p>
-        <input className="search_content" type="text" name="search" placeholder="Search..." ></input>
+      <p className="search_content">
+        Search your friend's username to see their album choices.
+      </p>
+      <input
+        onChange={handleSearchInput}
+        className="search_content"
+        type="text"
+        name="search"
+        placeholder="Search..."
+      ></input>
+      {showenItems}
     </div>
-    )
+  );
 }
 
-export default Discover
+export default Discover;
