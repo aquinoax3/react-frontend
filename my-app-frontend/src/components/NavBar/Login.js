@@ -31,8 +31,6 @@ function Login() {
     console.log("i submit ");
   };
 
-  const handleDelete = (event) => {};
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
