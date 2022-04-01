@@ -5,6 +5,7 @@
 #c7c4b9 - light grey*/
 
 
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -59,17 +60,6 @@ code {
 
 /* SEARCHBAR */
 
-#content_container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 7.5em;
-}
-
-.search_content{
-  margin: 1rem 2rem;
-}
-
 .row {
   display: flex;
   flex-direction: row;
@@ -82,9 +72,9 @@ code {
 .wrapper {
   width: 350px;
   height: 175px;
-  margin-left: 20px;
+  margin-left: 2%;
   flex-direction: row;
-  margin: 10px;
+  margin: 1%;
   overflow-y: hidden;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0;
@@ -103,8 +93,40 @@ code {
   background: #4717F6;
   color: #E7DFDD;
   float: right;
-  font-size: .5em;
+  display: flex;
+  flex-direction: column;
 } 
+
+.album_title{
+  font-size: 1em;
+  margin: 5px;
+}
+
+.album_artist{
+  font-size: .75em;
+  margin-top: 10%;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#content_container{
+  background-color: #4717F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7.5em;
+}
+
+.search_content{
+  color: #c7c4b9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 1rem 2rem;
+}
+#album_add_button{
+  margin-top: 10%;
+}
  
  .wrapper:hover {
   transform: scale(1);
@@ -114,14 +136,14 @@ code {
 /* home  */
 h1{
   font-size: 40px;
-  color: #4717F6;
+  color: #c7c4b9;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
-.intro{
-  color:#0E0B16; 
-  font-size: 15px;
+#intro{
+  color: #c7c4b9; 
+  font-size: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -131,43 +153,49 @@ h1{
   flex-direction: column;
   text-align: center;
   height: 100%;
-  min-height: 100px;
-  background-color: #c7c4b9;
+  min-height: 200px;
+  background-color: #4717F6;
 }
 
-.top {
-  height: 400px;
-  width: 400px;
-  padding: 15px
-}
-
-.bottom{
-  height: 400px;
-  width: 400px;
-  padding: 15px
-}
 
 .cf{
-  padding-top: 15px;
-  align-items: center;
-  display: inline-block;
-  justify-content: center;
-  margin:0 auto;
+  display: flex;
+  margin-left: 100px;
 }
 
 .cf img {
-  position:absolute;
-  left:0;
   -webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
+  height: 450px;
+  width: 450px;
+  padding: 15px;
+  position: fixed;
 }
 
 .cf img.top:hover {
   opacity:0;
 }
+  
 
 .cf2 {
-  padding-left: 400px;
+  margin-right: 100px;
+  display: flex;
+}
+
+.cf2 img {
+  right: 125px;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  height: 450px;
+  width: 450px;
+  padding: 15px;
+  position: fixed;
+}
+
+.cf2 img.top:hover {
+  opacity:0;
 }

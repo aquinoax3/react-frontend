@@ -19,7 +19,7 @@ function Login() {
       user_name: values.username,
       password: values.password,
     };
-    fetch("http://localhost:9292/users", {
+    fetch("http://localhost:9292/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,9 @@ function Login() {
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
-      .then((jsonData) => console.log("data", jsonData));
+      .then((jsonData) => {
+          localStorage.setItem('user',JSON.stringify(jsonData))
+      });
     console.log("i submit ");
   };
 

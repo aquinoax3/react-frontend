@@ -11,6 +11,7 @@ function App() {
   const [page, setPage] = useState("/");
   const [likedList, setLikedList] = useState([]);
   const [search, setSearch] = useState(" ");
+
   useEffect(() => {
     if (JSON.parse(localStorage.getItem("user")) === null) {
       localStorage.setItem("user", JSON.stringify({}));
@@ -23,6 +24,7 @@ function App() {
 
   function handleAddAlbum(album) {
     const foundIndex = likedList.findIndex((item) => album.name === item.name);
+    
     if (foundIndex === -1) {
       setLikedList([...likedList, album]);
       let albumInfo = {
@@ -38,11 +40,30 @@ function App() {
         body: JSON.stringify(albumInfo),
       })
         .then((response) => response.json())
+        .then((data)=> {
+            console.log(data.id)
+            let current_user = JSON.parse(localStorage.getItem('user'))
+            let info = {
+                user_id: current_user.id,
+                album_id: data.id
+            }
+            fetch("http://localhost:9292/toplists", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(info),
+              })
+                .then((response) => response.json())
+                .catch((error) => console.error("Error:", error));
+        })
         .catch((error) => console.error("Error:", error));
     } else {
       console.log("Album already on list");
     }
+
   }
+
 
   return (
     <BrowserRouter>
@@ -59,7 +80,7 @@ function App() {
           />
         </Route>
         <Route path="/YourFavs">
-          <YourFavs />
+          <YourFavs/>
         </Route>
         <Route path="/Discover">
           <Discover />
