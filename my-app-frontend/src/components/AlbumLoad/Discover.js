@@ -12,7 +12,7 @@ function Discover() {
       .then((response) => response.json())
       .then((jsonData) => setUserAlbums(jsonData));
   }
-  console.log(userAlbums);
+
 
   let showenItems = userAlbums.map((album) => {
     return <DiscCard key={album.id} album={album} />;
